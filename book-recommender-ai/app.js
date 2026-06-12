@@ -57,7 +57,6 @@ btn.addEventListener('click', async () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: userInput })
         });
-
         const data = await response.json();
         
         loading.remove();

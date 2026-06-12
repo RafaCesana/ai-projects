@@ -13,8 +13,6 @@
     // Pega o que o JS enviou via fetch
     $input = json_decode(file_get_contents('php://input'), true);
 
-    print($input);exit(0);
-
     if( isset($input['message']) )
     {
         $userInput = $input['message'];
@@ -22,7 +20,7 @@
     else
     {
         http_response_code(400);
-        echo json_encode( [error => 'Empty message'] );
+        echo json_encode( ['error' => 'Empty message'] );
         exit;
     }
 
