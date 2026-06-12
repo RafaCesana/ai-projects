@@ -8,7 +8,8 @@
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
 
-    $API_Key = 'AIzaSyDI3wgUW9czX5Vixi6vGsLmIEnB4Yfh1-c';
+    // $API_Key está nesse arquivo
+    require 'gemini-config.php'
 
     // Pega o que o JS enviou via fetch
     $input = json_decode(file_get_contents('php://input'), true);
@@ -89,7 +90,7 @@
     $data = json_decode($response, true);
 
     // Testando a resposta (Array) da API
-    //print_r($data);exit;
+    print_r($data);exit;
 
     // Tratando erros vindos da API
     if(isset($data['error']))
