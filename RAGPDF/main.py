@@ -1,4 +1,4 @@
-from langchain_chroma.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
@@ -30,7 +30,7 @@ def make_a_question():
     # k = quantos resultados eu quero recuperar (quanto maior, mais chunks, maior o contexto)
     results = db.similarity_search_with_relevance_scores(question, k=3)
 
-    print(results)
+    #print(results)
     #print(len(results))
 
     # results[0][1] é o score do primeiro chunk encontrado, [0] é o melhor resultado, [0][1] é o score, vai de 0 a 1.

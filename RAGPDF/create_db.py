@@ -1,7 +1,7 @@
 
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_chroma.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 from presidio_analyzer import AnalyzerEngine
@@ -30,7 +30,7 @@ def create_db():
 
 
 def load_docs():
-    loader = PyMuPDFLoader("base/test-doc.pdf")
+    loader = PyMuPDFLoader("base/o-medico-e-o-monstro.pdf")
     doc = loader.load()
 
     return doc
